@@ -1,3 +1,4 @@
+JS:
 ;(function($){
     $.fn.extend({
         "hashTab":function(){
