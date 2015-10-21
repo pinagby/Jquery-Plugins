@@ -1,4 +1,3 @@
-JS:
 ;(function($){
     $.fn.extend({
         "hashTab":function(){
@@ -31,9 +30,7 @@ HTML:
 <div id="tabCon" class="J_TabCon fn-hide">tab</div>
 
 CSS:
-<ul id="hashTab" class="J_Tab hash-tab fn-clear">
-	<li class="active">hash</li>
-	<li>tab</li>
-</ul>
-<div id="hashCon" class="J_TabCon">hash</div>
-<div id="tabCon" class="J_TabCon fn-hide">tab</div>
+.hash-tab{display: table;width: 100%; height: 40px;}
+.hash-tab li{display: table-cell; height: 40px; border:solid #ddd; border-width: 1px 0 1px 1px; color: #666; font-size: 16px; line-height: 40px; text-align: center;}
+.hash-tab li:last-child{border-right-width: 1px;}
+.hash-tab li.active{color: #c33;border-bottom-color: #c33;}
