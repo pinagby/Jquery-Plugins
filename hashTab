@@ -1,0 +1,39 @@
+JS:
+;(function($){
+    $.fn.extend({
+        "hashTab":function(){
+            var $this = $(this),
+                $tab = $this.children('li');
+            $tab.on('click',function(){
+                var target = $(this).attr('data-target');
+                location.hash = target;
+            });
+            $(window).on('hashchange',function(){
+                var target = location.hash;
+                $(target+"Con").removeClass('fn-hide').siblings('.J_TabCon').addClass('fn-hide');
+               $tab.each(function(){
+                    var thisTarget = $(this).attr('data-target');
+                    if(target == thisTarget){
+                        $(this).addClass('active').siblings('li').removeClass('active');
+                    }
+                });
+            }).trigger('hashchange');
+        }
+    });
+})(jQuery);
+
+HTML:
+<ul id="hashTab" class="J_Tab hash-tab fn-clear">
+	<li class="active">hash</li>
+	<li>tab</li>
+</ul>
+<div id="hashCon" class="J_TabCon">hash</div>
+<div id="tabCon" class="J_TabCon fn-hide">tab</div>
+
+CSS:
+<ul id="hashTab" class="J_Tab hash-tab fn-clear">
+	<li class="active">hash</li>
+	<li>tab</li>
+</ul>
+<div id="hashCon" class="J_TabCon">hash</div>
+<div id="tabCon" class="J_TabCon fn-hide">tab</div>
